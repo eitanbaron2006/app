@@ -1,0 +1,48 @@
+/* App-specific styles */
+
+/* Ensure smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Floating animation for hero images */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotateY(var(--rotate-y, 0deg)) rotateX(var(--rotate-x, 0deg));
+  }
+  50% {
+    transform: translateY(-20px) rotateY(var(--rotate-y, 0deg)) rotateX(var(--rotate-x, 0deg));
+  }
+}
+
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Focus visible styles */
+:focus-visible {
+  outline: 2px solid #ff4c11;
+  outline-offset: 2px;
+}
+
+/* Prevent text selection on interactive elements */
+button,
+a {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Smooth image loading */
+img {
+  transition: opacity 0.3s ease;
+}
+
+img[src=""] {
+  opacity: 0;
+}
