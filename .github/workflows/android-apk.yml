@@ -1,8 +1,8 @@
-name: Emerald Mahjong v7 Android APK
+name: Emerald Mahjong v8 Android APK
 on:
   push:
     branches:
-      - artifact/emerald-mahjong-v7-nature
+      - artifact/emerald-mahjong-v8-real-recordings
   workflow_dispatch:
 jobs:
   build:
@@ -21,6 +21,8 @@ jobs:
         run: |
           SDKMANAGER=$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager | head -1)
           "$SDKMANAGER" --install 'platforms;android-35' 'build-tools;35.0.0'
+      - name: Download and embed four CC0 field recordings
+        run: python3 scripts/embed_v8_recordings.py
       - name: Compile Android APK
         run: gradle --no-daemon --stacktrace assembleDebug
       - name: Verify APK and signature
@@ -30,5 +32,10 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: Emerald-Mahjong-v7-APK
+          name: Emerald-Mahjong-v8-APK
           path: app/build/outputs/apk/debug/app-debug.apk
+      - name: Upload offline HTML
+        uses: actions/upload-artifact@v4
+        with:
+          name: Emerald-Mahjong-v8-HTML
+          path: app/src/main/assets/index.html
