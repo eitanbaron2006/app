@@ -1,3 +1,7 @@
-# Emerald Mahjong Worlds v12
-Offline HTML5 Mahjong Solitaire on Android, with 6x7 large tile layout, four-slot collection tray, immediate input, tap-to-reveal Mystery Tiles, drag-to-peek, snap-back animation and two unlockable/previewable worlds: Ancient Egypt, Sakura Shrine. Two distinct backgrounds per world selected independently at each level start. Cropped from original art to 1080x2316, exactly 9:19.3 without stretching. Includes world-specific tile icon art, tile material colors, match particle palette, and authentic CC0 water/forest audio inherited from v8. The entire self-contained HTML game is assembled from 12 UTF-8 chunks to work around file upload limits; SHA256 checksum verified before build. Play offline. WebView Text Zoom is locked at 100%.
-CI workflow builds Android debug APK via Android Gradle Plugin, aapt, apksigner. Package com.emerald.mahjongv12 installs as distinct app because CI ephemeral debug signing keys cannot replace earlier versions.
+# Emerald Mahjong v13 — Original classic game with Stage Map & thematic worlds
+
+Offline HTML5 Mahjong on Android. Original classic board maintained, with large tiles in maximum 6×7 footprint, four-slot collection bar, immediate tap responsiveness, swipe/drag peek, reveal-hidden-tile challenge, undo, hints, magic, shuffle.
+
+New: a 40-stage selection map with unlock progression and replay. Classic Mahjong appears in regular stages; themed stages 4 and 9 feature Ancient Egypt, stages 6 and 10 feature Sakura Shrine (cycle repeats), with custom backgrounds, tile graphics and match SFX accents. Real CC0 world music (separate user toggle + volume) plays on special stages. Original four nature sound recordings remain and can be controlled separately. No generated/synthesized melody added.
+
+Build: GitHub Actions branch artifact/emerald-mahjong-v13-map-music; checksum-verified offline HTML in 12 pieces; downloads vetted CC0 music and embeds; builds/signs Android debug APK with Gradle/SDK35. Package com.emerald.mahjongv13 installs separately from old versions due to debug signing keys. Real Android device testing remains necessary.
