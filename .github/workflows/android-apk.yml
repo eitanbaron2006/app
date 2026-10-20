@@ -2,7 +2,7 @@ name: Emerald Mahjong v13 Android APK
 on:
   push:
     branches:
-      - artifact/emerald-mahjong-v13-complete
+      - artifact/emerald-mahjong-v13-stage-map-music
   workflow_dispatch:
 jobs:
   build:
