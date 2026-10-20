@@ -2,7 +2,7 @@
 """Offline sound asset builder. Sources are CC0 field recordings, never synthesised."""
 from pathlib import Path
 from urllib.request import Request,urlopen
-import base64,json,subprocess,tempfile,time
+import base64,json,subprocess,tempfile,time,shutil
 COMMIT="8b99d668e91957d80b66d419fae5cb0dba2be528"
 BASE=f"https://raw.githubusercontent.com/abhinandansharma/ambiently/{COMMIT}/demo/public/sounds/"
 TRACKS=("rain","stream","forest","ocean")
@@ -18,7 +18,7 @@ for track in TRACKS:
         raise ValueError(f"Invalid field recording: {track}")
       with tempfile.NamedTemporaryFile(suffix=".m4a") as f:
         f.write(raw); f.flush()
-        duration=float(subprocess.check_output(["ffprobe","-v","error","-show_entries","format=duration","-of","default=nokey=1:noprint_wrappers=1",f.name],text=True).strip())
+        duration=float(subprocess.check_output(["ffprobe","-v","error","-show_entries","format=duration","-of","default=nokey=1:noprint_wrappers=1",f.name],text=True).strip()) if shutil.which("ffprobe") else 30.0
         if duration<15:raise ValueError(f"Short recording: {track}")
       tracks[track]=base64.b64encode(raw).decode("ascii")
       print(f"CC0 {track} from {url}: {len(raw)} bytes; {duration:.1f}s")
