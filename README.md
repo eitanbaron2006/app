@@ -1,3 +1,7 @@
-# Emerald Mahjong Worlds v12
-Offline HTML5 Mahjong Solitaire on Android, with 6x7 large tile layout, four-slot collection tray, immediate input, tap-to-reveal Mystery Tiles, drag-to-peek, snap-back animation and two unlockable/previewable worlds: Ancient Egypt, Sakura Shrine. Two distinct backgrounds per world selected independently at each level start. Cropped from original art to 1080x2316, exactly 9:19.3 without stretching. Includes world-specific tile icon art, tile material colors, match particle palette, and authentic CC0 water/forest audio inherited from v8. The entire self-contained HTML game is assembled from 12 UTF-8 chunks to work around file upload limits; SHA256 checksum verified before build. Play offline. WebView Text Zoom is locked at 100%.
-CI workflow builds Android debug APK via Android Gradle Plugin, aapt, apksigner. Package com.emerald.mahjongv12 installs as distinct app because CI ephemeral debug signing keys cannot replace earlier versions.
+# Emerald Mahjong v13 — Original Classic Game + World Journey
+Preserves the previous Mahjong, with a 40-stage map (locked/unlocked and replay). Most stages use the unchanged classic Emerald Mahjong tile faces and original green board; some stages are Ancient Egypt (4, 9, 14...) or Sakura Shrine (6, 10, 16...), with their own art, background, tiles, visual match effects and independently controlled CC0 instrumental music.
+
+**Audio layers are additive**: nature ambience (rain, stream, forest, ocean from v8), original game-action SFX, and actual CC0 instrumental tracks for Egypt and Japan. User controls ambience, music volume, and SFX independently. No synthetic background melody.
+
+Gameplay retains 6 columns, up to 7 rows, 4-slot collection tray, immediate input, face-down Mystery Tiles, drag-to-peek. Native WebView locks text zoom 100%.
+APK Android applicationId com.emerald.mahjongv13 (installs alongside v12 because debug signing key is ephemeral). Android SDK 35, Gradle 8.11.1.
