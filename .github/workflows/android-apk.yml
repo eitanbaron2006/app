@@ -21,6 +21,11 @@ jobs:
         run: |
           SDKMANAGER=$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager | head -1)
           "$SDKMANAGER" --install 'platforms;android-35' 'build-tools;35.0.0'
+      - name: Install audio format tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          ffmpeg -version | head -1
       - name: Download real licensed nature recordings and pack offline HTML
         run: |
           command -v ffmpeg
