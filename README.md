@@ -1,4 +1,5 @@
-# Emerald Mahjong v5 for Android
-Original offline Mahjong game using a strict 6-column × 7-row footprint, four-slot collection tray, combo VFX, sound, music, hint, shuffle, undo and magic. 
-Build debug APK using Android Studio (SDK 35, Gradle 8.11.1, JDK 17) or with GitHub Actions. APK is at app/build/outputs/apk/debug/app-debug.apk.
-Package ID changed to com.emerald.mahjongv5 to avoid signature conflicts with past experiments. Run emulator test before considering APK verified.
+# Emerald Mahjong v6 – stable Android font sizes
+
+The v6 APK fixes system font-size settings increasing text inside the game: WebView explicitly calls setTextZoom(100), uses fixed browser defaults, and disables automatic text adjustments in the HTML stylesheet. The 6-column/7-row board and four-slot collection tray remain intact.
+
+Build: GitHub Actions on branch artifact/emerald-mahjong-v6-fixed-ui, Android SDK 35, Gradle 8.11.1. Package com.emerald.mahjongv6 installs alongside the older v5 because the previous debug signing key was not retained. The installed game must still be tested on a real Android device.

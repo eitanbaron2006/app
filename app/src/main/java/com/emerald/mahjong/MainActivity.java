@@ -31,6 +31,12 @@ public final class MainActivity extends Activity {
             game = new WebView(this);
             game.setBackgroundColor(Color.rgb(3, 49, 38));
             WebSettings settings = game.getSettings();
+            // Keep game typography independent of Android system font-size settings.
+            settings.setTextZoom(100);
+            settings.setDefaultFontSize(16);
+            settings.setDefaultFixedFontSize(13);
+            settings.setMinimumFontSize(1);
+            settings.setMinimumLogicalFontSize(1);
             settings.setJavaScriptEnabled(true);
             settings.setDomStorageEnabled(true);
             settings.setMediaPlaybackRequiresUserGesture(true);

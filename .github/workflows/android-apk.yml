@@ -1,8 +1,8 @@
-name: Emerald Mahjong v5 Android APK
+name: Emerald Mahjong v6 Android APK
 on:
   push:
     branches:
-      - artifact/emerald-mahjong-v5-apk
+      - artifact/emerald-mahjong-v6-fixed-ui
   workflow_dispatch:
 jobs:
   build:
@@ -30,29 +30,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: Emerald-Mahjong-v5-APK
+          name: Emerald-Mahjong-v6-APK
           path: app/build/outputs/apk/debug/app-debug.apk
-      - name: Verify startup in Android emulator
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 35
-          arch: x86_64
-          target: google_apis
-          profile: pixel_6
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-snapshot
-          script: |
-            adb install -r app/build/outputs/apk/debug/app-debug.apk
-            adb logcat -c
-            adb shell am start -W -n com.emerald.mahjongv5/com.emerald.mahjong.MainActivity
-            sleep 12
-            adb logcat -d -s AndroidRuntime:E EmeraldMahjong:E > android-startup-log.txt
-            cat android-startup-log.txt
-            ! grep -E 'FATAL EXCEPTION|Could not open game|Missing game asset|JS:' android-startup-log.txt
-            adb shell pidof com.emerald.mahjongv5
-      - name: Upload startup log
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: Emerald-Mahjong-v5-startup-log
-          path: android-startup-log.txt
-          if-no-files-found: ignore

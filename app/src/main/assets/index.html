@@ -1,6 +1,11 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#063f32"><meta name="apple-mobile-web-app-capable" content="yes"><title>Emerald Mahjong — Collector's Edition · Large Tiles v5</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#063f32"><meta name="apple-mobile-web-app-capable" content="yes"><title>Emerald Mahjong — Large Tiles v6 · Fixed Android Text</title>
 <style>
+/* Stable UI typography across Android system font-size and display-size preferences.
+   CSS px remain fixed for text; viewport-dependent layout stays responsive. */
+html{font-size:16px!important;-webkit-text-size-adjust:none!important;text-size-adjust:none!important}
+body,button,input,select,textarea{-webkit-text-size-adjust:none!important;text-size-adjust:none!important}
+
 :root{--cream:#fff5dd;--gold:#f2c67c;--midgold:#bd7c42;--pine:#064235;--wood:#643b25;--safeB:env(safe-area-inset-bottom,0px);--safeT:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{height:100%;width:100%;margin:0;overflow:hidden}body{font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;background:#022e26;color:var(--cream);touch-action:manipulation;user-select:none;-webkit-user-select:none}button{cursor:pointer;font:inherit;color:inherit;border:0;background:transparent;touch-action:manipulation}button:focus-visible{outline:2px solid #ffde95;outline-offset:3px}button:disabled{opacity:.36;filter:grayscale(.5);cursor:not-allowed}
 #app{position:relative;width:100%;height:100%;height:100dvh;min-height:390px;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 49% 46%,#13846c 0%,#09614e 48%,#043e32 79%,#022c24 110%)}

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
   <uses-permission android:name="android.permission.INTERNET" />
   <application android:allowBackup="false"
-    android:label="Emerald Mahjong v5"
+    android:label="Emerald Mahjong v6"
     android:theme="@android:style/Theme.Material.Light.NoActionBar"
     android:usesCleartextTraffic="false"
     android:supportsRtl="false">
