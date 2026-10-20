@@ -1,8 +1,8 @@
-name: Emerald Mahjong v12 Android APK
+name: Emerald Mahjong v13 Android APK
 on:
   push:
     branches:
-      - artifact/emerald-mahjong-v12-complete
+      - artifact/emerald-mahjong-v13-level-journey
   workflow_dispatch:
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
           SDKMANAGER=$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager | head -1)
           "$SDKMANAGER" --install 'platforms;android-35' 'build-tools;35.0.0'
       - name: Reconstruct complete offline game from source chunks
-        run: python3 scripts/assemble_v12.py
+        run: python3 scripts/assemble_v13.py
       - name: Compile Android APK
         run: gradle --no-daemon --stacktrace assembleDebug
       - name: Verify APK and signature
@@ -32,10 +32,10 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: Emerald-Mahjong-v12-APK
+          name: Emerald-Mahjong-v13-APK
           path: app/build/outputs/apk/debug/app-debug.apk
       - name: Upload offline HTML
         uses: actions/upload-artifact@v4
         with:
-          name: Emerald-Mahjong-v12-HTML
+          name: Emerald-Mahjong-v13-HTML
           path: app/src/main/assets/index.html

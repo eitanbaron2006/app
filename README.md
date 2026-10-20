@@ -1,3 +1,6 @@
-# Emerald Mahjong Worlds v12
-Offline HTML5 Mahjong Solitaire on Android, with 6x7 large tile layout, four-slot collection tray, immediate input, tap-to-reveal Mystery Tiles, drag-to-peek, snap-back animation and two unlockable/previewable worlds: Ancient Egypt, Sakura Shrine. Two distinct backgrounds per world selected independently at each level start. Cropped from original art to 1080x2316, exactly 9:19.3 without stretching. Includes world-specific tile icon art, tile material colors, match particle palette, and authentic CC0 water/forest audio inherited from v8. The entire self-contained HTML game is assembled from 12 UTF-8 chunks to work around file upload limits; SHA256 checksum verified before build. Play offline. WebView Text Zoom is locked at 100%.
-CI workflow builds Android debug APK via Android Gradle Plugin, aapt, apksigner. Package com.emerald.mahjongv12 installs as distinct app because CI ephemeral debug signing keys cannot replace earlier versions.
+# Emerald Mahjong v13 — Level Journey
+Keeps classic Emerald Mahjong levels and adds 40-level Stage Map with Egypt and Japan challenge levels. Immediate tapping, drag-peek, mystery tiles, 6x7 max grid, four-slot collection, separate ambient, music and SFX controls. Offline music licensed CC0.
+World music (Creative Commons Zero, CC0):
+Ancient Egypt: "Egyptian meditation music" by brandon75689 (submitted by HaelDB), https://opengameart.org/content/egyptian-meditation-music, file v312.ogg
+Japan: "Hot Springs Town" by Kistol, https://opengameart.org/content/hot-springs-town, file hot_spring_town.mp3
+Real nature sound recordings from v8 retained, not removed.
