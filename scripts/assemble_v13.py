@@ -3,7 +3,7 @@ from pathlib import Path
 from urllib.request import Request,urlopen
 import base64,time
 root=Path(__file__).resolve().parents[1]
-parts=sorted((root/"game_chunks").glob("part-*.txt"))
+parts=sorted(x for x in (root/"game_chunks").glob("part-*.txt") if x.name!="part-00.txt")
 assert len(parts)==12, f"Expected 12 HTML chunks; found {len(parts)}"
 game="".join(x.read_text("utf-8") for x in parts)
 assert len(game)>5_000_000 and game.count("const WORLD_MUSIC_AUDIO={};")==1
