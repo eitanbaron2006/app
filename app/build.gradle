@@ -3,11 +3,11 @@ android {
     namespace 'com.emerald.mahjong'
     compileSdk 35
     defaultConfig {
-        applicationId 'com.emerald.mahjongv8'
+        applicationId 'com.emerald.mahjongv12'
         minSdk 24
         targetSdk 35
-        versionCode 8
-        versionName '8.0'
+        versionCode 12
+        versionName '12.0'
     }
     buildTypes { release { minifyEnabled false } }
     compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }

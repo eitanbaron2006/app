@@ -1,11 +1,3 @@
-# Emerald Mahjong v8 — Authentic Nature Edition
-
-v8 uses four 30-second **real CC0 field recordings** (Gentle Rain, Flowing Stream, Forest Morning and Ocean Waves) from the open-source Ambiently demo. All generated ambient loops and Classic Melody have been removed. Fixed Android WebView fonts, fitted four-slot collection tray, big 6x7 mahjong tiles, original game logic and interactive match effects are preserved.
-
-Build APK and self-contained HTML with GitHub Actions on branch artifact/emerald-mahjong-v8-real-recordings; the action downloads verified audio directly from the pinned Ambiently GitHub revision, embeds those files into a single offline HTML file, and then builds, signs and checks the APK.
-
-The background ambience defaults to 35%, with a quiet overall multiplier, and can be separately muted or adjusted. The independent game-action SFX remain available.
-
-Project package ID `com.emerald.mahjongv8` installs separately from v7 because debug signing keys differ between hosted runners.
-
-See AUDIO_CREDITS.md for original recording authors and URLs. Recording license CC0 1.0; source application's code under MIT.
+# Emerald Mahjong Worlds v12
+Offline HTML5 Mahjong Solitaire on Android, with 6x7 large tile layout, four-slot collection tray, immediate input, tap-to-reveal Mystery Tiles, drag-to-peek, snap-back animation and two unlockable/previewable worlds: Ancient Egypt, Sakura Shrine. Two distinct backgrounds per world selected independently at each level start. Cropped from original art to 1080x2316, exactly 9:19.3 without stretching. Includes world-specific tile icon art, tile material colors, match particle palette, and authentic CC0 water/forest audio inherited from v8. The entire self-contained HTML game is assembled from 12 UTF-8 chunks to work around file upload limits; SHA256 checksum verified before build. Play offline. WebView Text Zoom is locked at 100%.
+CI workflow builds Android debug APK via Android Gradle Plugin, aapt, apksigner. Package com.emerald.mahjongv12 installs as distinct app because CI ephemeral debug signing keys cannot replace earlier versions.
