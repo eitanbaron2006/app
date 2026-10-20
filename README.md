@@ -1,5 +1,5 @@
-# Emerald Mahjong v6 – stable Android font sizes
-
-The v6 APK fixes system font-size settings increasing text inside the game: WebView explicitly calls setTextZoom(100), uses fixed browser defaults, and disables automatic text adjustments in the HTML stylesheet. The 6-column/7-row board and four-slot collection tray remain intact.
-
-Build: GitHub Actions on branch artifact/emerald-mahjong-v6-fixed-ui, Android SDK 35, Gradle 8.11.1. Package com.emerald.mahjongv6 installs alongside the older v5 because the previous debug signing key was not retained. The installed game must still be tested on a real Android device.
+# Emerald Mahjong v7 — Nature Edition
+Six-column by seven-row offline portrait Mahjong. Four snug-fitting portrait collection pockets (1 px inset), animated matches, SFX and persistent gameplay options.
+Four original generated offline soundscapes: stream, soft rain, forest breeze and quiet night; Nature Mix changes scenes with a gentle 2.8 second crossfade every ~85 seconds. Classic melody retained. Sound selection and volume saved.
+Android WebView setTextZoom(100) retains fixed user-interface fonts.
+Package ID com.emerald.mahjongv7 is distinct from v6 because the previous hosted debug signing key was not preserved. Build with Android SDK 35 and Gradle 8.11.1. Emulator startup is not verified on Linux CI without KVM.
